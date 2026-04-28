@@ -48,27 +48,25 @@ Pipeline Steps:
   5. Evaluation         - Generate metrics and plots
   6. Experiment Tracking - Log to MLflow
   7. Model Registry     - Version and register model
-        """
+        """,
     )
 
     parser.add_argument(
         "--config",
         type=str,
         default="configs/config.yaml",
-        help="Path to configuration file (default: configs/config.yaml)"
+        help="Path to configuration file (default: configs/config.yaml)",
     )
 
     parser.add_argument(
         "--model",
         type=str,
         choices=["random_forest", "logistic_regression", "svm", "gradient_boosting"],
-        help="Override model type from config"
+        help="Override model type from config",
     )
 
     parser.add_argument(
-        "--no-tracking",
-        action="store_true",
-        help="Disable MLflow experiment tracking"
+        "--no-tracking", action="store_true", help="Disable MLflow experiment tracking"
     )
 
     args = parser.parse_args()
@@ -112,6 +110,7 @@ Pipeline Steps:
         print(f"\n ERROR: Pipeline failed!")
         print(f"Error: {e}")
         import traceback
+
         traceback.print_exc()
         return 1
 
