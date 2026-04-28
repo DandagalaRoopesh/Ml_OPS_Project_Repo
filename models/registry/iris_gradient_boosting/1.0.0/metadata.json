@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "model_name": "iris_gradient_boosting",
+  "registered_at": "2026-04-28T11:50:57.485201",
+  "metrics": {
+    "accuracy": 0.9,
+    "precision": 0.8993265993265993,
+    "recall": 0.9,
+    "f1_score": 0.8981620718462824,
+    "roc_auc": 0.9633333333333333
+  },
+  "params": {
+    "n_estimators": 100,
+    "learning_rate": 0.1,
+    "max_depth": 5,
+    "random_state": 42
+  },
+  "description": "Iris classifier using gradient_boosting",
+  "stage": "none",
+  "model_path": "models\\registry\\iris_gradient_boosting\\1.0.0\\model.joblib",
+  "artifacts": {}
+}
