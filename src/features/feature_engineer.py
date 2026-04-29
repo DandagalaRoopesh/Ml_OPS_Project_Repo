@@ -4,13 +4,10 @@ Feature Engineering Module
 Handles feature scaling, transformation, and selection.
 """
 
-from pathlib import Path
-from typing import Dict, List, Optional, Tuple
-
-import joblib
 import numpy as np
 import pandas as pd
-from loguru import logger
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 from sklearn.feature_selection import SelectKBest, f_classif, mutual_info_classif
 from sklearn.preprocessing import (
     MinMaxScaler,
@@ -18,6 +15,8 @@ from sklearn.preprocessing import (
     RobustScaler,
     StandardScaler,
 )
+import joblib
+from loguru import logger
 
 
 class FeatureEngineer:
@@ -86,9 +85,7 @@ class FeatureEngineer:
         # Step 1: Scaling
         logger.info(f"Applying {self.scaling_method} scaling...")
         X_scaled = self.scaler.fit_transform(X_transformed)
-        X_transformed = pd.DataFrame(
-            X_scaled, columns=current_feature_names, index=X.index
-        )
+        X_transformed = pd.DataFrame(X_scaled, columns=current_feature_names, index=X.index)
 
         # Step 2: Polynomial Features
         if self.create_polynomial:
